@@ -46,7 +46,7 @@ The **To-Do List Application** is a simple and interactive tool that allows user
 ### 🚀 **How to Run**
 1. Clone the repository or download the project files.
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/sks01dev/To-Do-List>
    cd to-do-list-app
    ```
 2. Install dependencies:
