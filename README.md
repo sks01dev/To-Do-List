@@ -1,98 +1,65 @@
+# 📝 To-Do List App (New Version)
 
-## 📋 **To-Do List Application**
+## 🚀 Overview
 
-### 🖥️ **Project Overview**
-The **To-Do List Application** is a simple and interactive tool that allows users to organize their tasks efficiently. Designed with React.js, this project features a dynamic interface styled using CSS, offering a visually appealing and user-friendly experience.
-
----
-
-### ✨ **Features**
-1. **Add Tasks**: Users can type tasks into the input box and add them to their to-do list with a single click.
-2. **Dynamic List Rendering**: Tasks are displayed instantly on the list after being added.
-3. **Clear Input Field**: The input field resets after a task is added, ensuring a smooth user experience.
-4. **Aesthetic Design**: The app incorporates radial gradients, playful fonts, and interactive elements for an engaging interface.
+This branch introduces a **new version** of the To-Do List app built with **React**. It allows users to interact with a list of tasks: **add new tasks** and **delete tasks** by clicking on them.
 
 ---
 
-### 🛠️ **Technologies Used**
-- **Frontend**: React.js
-- **Styling**: CSS (custom and responsive design)
-- **Font**: *Architect's Daughter* (Google Fonts)
-- **Package Management**: NPM (via `package.json`)
+### 🎯 **Key Features**:
+- **Add New Tasks**: Type in a task and click the **Add** button to add it to the list.
+- **Delete Tasks**: Click on a task to remove it from the list.
 
 ---
 
-### 📂 **Project Structure**
-```
-📦 To-Do List App
-├── 📄 index.html         # The main HTML structure
-├── 📄 index.js           # Entry point for the React application
-├── 📄 styles.css         # Custom CSS for styling the app
-├── 📄 App.jsx            # Main React component handling UI and logic
-```
+## 🔧 **Components**
+
+### `App.jsx`
+- **Main component** responsible for managing the state of the app.
+- Handles **adding** new tasks and **deleting** tasks.
+- Passes the necessary functions (`handleChange` and `addItem`) and input value to the `InputArea` component.
 
 ---
 
-### 🎨 **Design Highlights**
-#### **CSS Styles (styles.css):**
-- **Container**: A centered, card-like structure with rounded corners and subtle shadows.
-- **Heading**: A fun, tilted heading with bold colors to attract attention.
-- **Input Field**: A styled input box with dashed underline and smooth border-radius transitions.
-- **Button**: A minimalistic, soft-colored button with hover effects.
-- **List Items**: Neatly aligned list items for tasks.
+### `InputArea.jsx`
+- A **form** for entering new tasks.
+- Includes an **input field** for typing and an **Add** button to trigger adding the task.
+- Accepts props to handle the text change and task addition.
 
 ---
 
-### 🚀 **How to Run**
-1. Clone the repository or download the project files.
-   ```bash
-   git clone <https://github.com/sks01dev/To-Do-List>
-   cd to-do-list-app
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the React development server:
-   ```bash
-   npm start
-   ```
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+### `ToDoItem.jsx`
+- Represents **individual tasks** in the list.
+- Each task can be clicked to trigger the deletion of that specific task.
+- Accepts props to handle task deletion (`onChecked`) and displays the task (`text`).
 
 ---
 
+## ⚙️ **How It Works**
 
-### 📜 **Code Highlights**
-#### **App.jsx**
-Handles the logic for dynamically adding and displaying tasks:
-```jsx
-const [items, setItems] = useState([]); 
-const handleItem = () => {
-  setItems((prevItems) => [...prevItems, tempItem]); 
-};
-<ul>{items.map((item, index) => <li key={index}>{item}</li>)}</ul>
-```
+1. **User Input**:
+   - Type a task in the input field and click the **Add** button.
+   - The task is added to the list through the `addItem` function.
 
-#### **styles.css**
-Defines the card-style design and radial gradients:
-```css
-body {
-  background-color: #ffeaa7;
-  font-family: "Architects Daughter", cursive;
-}
+2. **Deleting Tasks**:
+   - Click on a task in the list to **delete** it.
+   - The task is removed by filtering it out using the `id` in the `deleteItem` function.
 
-.container {
-  background: radial-gradient(#bfc0c1 7.2%, transparent 0);
-  border-radius: 20px;
-}
-```
+3. **State Management**:
+   - **React state** (`useState`) is used to manage:
+     - The value of the input field (`inputText`).
+     - The list of tasks (`items`).
 
 ---
 
-### 🙌 **Acknowledgements**
-- Inspired by modern minimalist UI principles.
-- Thanks to **React** for simplifying frontend development and **Google Fonts** for enhancing typography.
+## 📈 **Next Steps**
 
+- **Persistent Storage**: Add local storage support to keep tasks even after page reloads.
+- **Styling**: Improve UI with custom CSS or styling libraries (e.g., Bootstrap, Material UI).
+- **New Features**: Add task completion status, sorting options, or categorization.
+
+---
+
+## 🎨 **Conclusion**
+
+This new version of the To-Do List app demonstrates essential **React concepts** like state management, props, and event handling. It provides a solid foundation for further **feature expansion** and **UI improvements**.
